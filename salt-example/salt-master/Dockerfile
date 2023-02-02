@@ -1,4 +1,4 @@
-FROM jarfil/salt-master-mini:debian-stretch
+FROM jarfil/salt-master-mini:debian-buster
 
 MAINTAINER Jaroslaw Filiochowski <jarfil@gmail.com>
 
@@ -7,6 +7,8 @@ COPY . /
 RUN apt-get -y update && \
 	apt-get -y upgrade && \
 	apt-get -y install \
+		apt-transport-https \
+                apt-utils \
 		salt-minion \
 		salt-ssh \
 		salt-cloud && \
